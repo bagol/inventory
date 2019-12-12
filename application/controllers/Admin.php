@@ -88,7 +88,7 @@ class Admin extends CI_Controller
 		$data['title'] = 'Data User | '.$this->session->userdata('role');
 		$data['supliers'] = $this->M_user->getUserAll()->result_array();
 		$this->load->view('template/header',$data);
-		$this->load->view('admin/user/data_user',$data);
+		$this->load->view('admin/user/data_user');
 		$this->load->view('template/footer');
 	}
 
@@ -109,7 +109,22 @@ class Admin extends CI_Controller
 	function addToko(){
 		$data['title'] = 'Tambah Data Toko | '.$this->session->userdata('role');
 		$this->load->view('template/header',$data);
-		$this->load->view('admin/toko/addToko',$data);
+		$this->load->view('admin/toko/addToko');
+		$this->load->view('template/footer');
+	}
+
+	function barang(){
+		$data['title'] = 'Data Barang | '.$this->session->userdata('role');
+		$data['barangs'] = $this->M_barang->getBarang()->result_array();
+		$this->load->view('template/header',$data);
+		$this->load->view('admin/barang/data_barang',$data);
+		$this->load->view('template/footer');
+	}
+
+	function addBarang(){
+		$data['title'] = 'Tambah Data Barang | '.$this->session->userdata('role');
+		$this->load->view('template/header',$data);
+		$this->load->view('admin/barang/addBarang');
 		$this->load->view('template/footer');
 	}
 }

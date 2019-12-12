@@ -74,8 +74,8 @@
                   </li>
                   <li class=""><a><i class="fa fa-archive"></i> Barang  <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: none;">
-                      <li class="current-page"><a href="#">Data Barang</a></li>
-                      <li><a href="#">Tambah Barang</a></li>
+                      <li class="current-page"><a href="<?= base_url('Admin/barang') ?>">Data Barang</a></li>
+                      <li><a href="<?= base_url('admin/addBarang') ?>">Tambah Barang</a></li>
                     </ul>
                   </li>
                   <li class=""><a><i class="fa fa-truck"></i> Suplier  <span class="fa fa-chevron-down"></span></a>
