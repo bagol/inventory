@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" href="images/favicon.ico" type="image/ico" />
 
-    <title>Gentelella Alela! | </title>
+    <title><?= $title ?> </title>
 
     <!-- Bootstrap -->
     <link href="<?= base_url('assets/gentelella/') ?>vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +49,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="<?= base_url('assets/gentelella/') ?>production/images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="<?= base_url() ?>images/profile/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -69,25 +69,25 @@
                   <li class=""><a><i class="glyphicon glyphicon-list-alt"></i> Transaksi  <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: none;">
                       <li class="current-page"><a href="<?= base_url('Admin/barang_masuk') ?>">Barang Masuk</a></li>
-                      <li><a href="#">Barang Keluar</a></li>
+                      <li><a href="<?= base_url('Admin/barang_keluar') ?>">Barang Keluar</a></li>
                     </ul>
                   </li>
                   <li class=""><a><i class="fa fa-truck"></i> Suplier  <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: none;">
-                      <li class="current-page"><a href="#">Data Suplier</a></li>
-                      <li><a href="#">Tambah Suplier</a></li>
+                      <li class="current-page"><a href="<?= base_url('Admin/suplier') ?>">Data Suplier</a></li>
+                      <li><a href="<?= base_url('admin/addSuplier') ?>">Tambah Suplier</a></li>
                     </ul>
                   </li>
                   <li class=""><a><i class="fa fa-group"></i> User  <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: none;">
-                      <li class="current-page"><a href="#">Data User</a></li>
-                      <li><a href="#">Tambah User</a></li>
+                      <li class="current-page"><a href="<?= base_url('Admin/user') ?>">Data User</a></li>
+                      <li><a href="<?= base_url('admin/addUser') ?>">Tambah User</a></li>
                     </ul>
                   </li>
                   <li class=""><a><i class="fa fa-map-marker"></i> Toko  <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: none;">
-                      <li class="current-page"><a href="#">Data Toko</a></li>
-                      <li><a href="#">Tambah Toko</a></li>
+                      <li class="current-page"><a href="<?= base_url('Admin/toko') ?>">Data Toko</a></li>
+                      <li><a href="<?= base_url('admin/addToko') ?>">Tambah Toko</a></li>
                     </ul>
                   </li>
 
@@ -109,7 +109,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?= base_url('Login/logOut') ?>">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -127,7 +127,7 @@
               <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
                   <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="<?= base_url('assets/gentelella/') ?>production/images/img.jpg" alt=""><?= $this->session->userdata('username') ?>
+                    <img src="<?= base_url() ?>images/profile/img.jpg" alt=""><?= $this->session->userdata('username') ?>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  href="javascript:;"> Profile</a>

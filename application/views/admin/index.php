@@ -5,7 +5,7 @@
 				<div class="tile_count">
 				<div class="col-md-2 col-sm-4  tile_stats_count">
 				  <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
-				  <div class="count">2500</div>
+				  <div class="count"><?= $total_user ?></div>
 				  
 				</div>
 				<div class="col-md-2 col-sm-4  tile_stats_count">
@@ -15,22 +15,22 @@
 				</div>
 				<div class="col-md-2 col-sm-4  tile_stats_count">
 				  <span class="count_top"><i class="fa fa-upload"></i> Total Transaksi Keluar</span>
-				  <div class="count ">2,500</div>
+				  <div class="count "><?= $jml_transaksiKeluar ?></div>
 				  
 				</div>
 				<div class="col-md-2 col-sm-4  tile_stats_count">
 				  <span class="count_top"><i class="fa fa-archive"></i> Total Barang</span>
-				  <div class="count">4,567</div>
+				  <div class="count"><?= $total_barang ?></div>
 				  
 				</div>
 				<div class="col-md-2 col-sm-4  tile_stats_count">
 				  <span class="count_top"><i class="fa fa-map-marker"></i> Total Toko</span>
-				  <div class="count">2,315</div>
+				  <div class="count"><?= $total_toko ?></div>
 				  
 				</div>
 				<div class="col-md-2 col-sm-4  tile_stats_count">
 				  <span class="count_top"><i class="fa fa-truck"></i> Total Suplier</span>
-				  <div class="count">7,325</div>
+				  <div class="count"><?= $total_suplier ?></div>
 				  
 				</div>
 		</div>
