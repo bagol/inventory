@@ -28,6 +28,8 @@ class Admin extends CI_Controller
 		$data['total_toko'] = $this->M_toko->getToko()->num_rows();
 		$data['total_suplier'] = $this->M_suplier->getSuplier()->num_rows();
 		$data['total_user'] = $this->M_user->getUserAll()->num_rows();
+		$data['transaksi_bulan_ini'] = $this->M_barangMasuk->getBarangMasukNow(12)->result_array();
+		$data['transaksi_keluar_bulan_ini'] = $this->M_barangKeluar->getTransaksiKeluarNow(12)->result_array();
 		$this->load->view('template/header',$data);
 		$this->load->view('admin/index',$data);
 		$this->load->view('template/footer');
