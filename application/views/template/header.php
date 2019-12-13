@@ -59,7 +59,7 @@
             <!-- /menu profile quick info -->
 
             <br />
-
+            <?php if ($this->session->userdata('role') == 'admin'): ?>
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
@@ -103,10 +103,31 @@
 
             </div>
             <!-- /sidebar menu -->
+            <?php endif ?>
+            <?php if ($this->session->userdata('role') == 'admin_toko'): ?>
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a href="<?= base_url('Admin') ?>"><i class="fa fa-home"></i> Home </a></li>
+                  <li class=""><a href="<?= base_url('Admin_toko/permintaan') ?>"><i class="fa fa-envelope-o"></i> Permintaan  <span class="fa fa-chevron-down"></span></a>
+                    <!-- <ul class="nav child_menu" style="display: none;">
+                      <li class="current-page"><a href="<?= base_url('Admin/toko') ?>">Data Toko</a></li>
+                      <li><a href="<?= base_url('admin/addToko') ?>">Tambah Toko</a></li>
+                    </ul> -->
+                  </li>
+                   <li class=""><a href="<?= base_url('Admin_toko/laporan') ?>"><i class="fa fa-file-text-o"></i> Laporan </a>
+                  </li>
+                </ul>
+              </div>
 
+            </div>
+            <!-- /sidebar menu -->
+            <?php endif ?>
 
             <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
+            <!-- <div class="sidebar-footer hidden-small">
               <a data-toggle="tooltip" data-placement="top" title="Settings">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
               </a>
@@ -119,7 +140,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Logout" href="<?= base_url('Login/logOut') ?>">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
-            </div>
+            </div> -->
             <!-- /menu footer buttons -->
           </div>
         </div>
@@ -138,6 +159,7 @@
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  href="javascript:;"> Profile</a>
+                     <a class="dropdown-item"  href="<?= base_url('Login/logOut') ?>"> Logout</a>
                   </div>
                 </li>
 

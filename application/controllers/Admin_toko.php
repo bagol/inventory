@@ -12,9 +12,25 @@ class Admin_toko extends CI_Controller {
 	}
 
 	function index(){
+		$data['title'] = 'Dashboard |'.$this->session->userdata('role');
+		$this->load->view('template/header', $data);
 		$this->load->view('toko/index');
+		$this->load->view('template/footer');
 	}
 
+	function permintaan(){
+		$data['title'] = 'Permintaan Stok |'.$this->session->userdata('role');
+		$this->load->view('template/header', $data);
+		$this->load->view('toko/permintaan/index');
+		$this->load->view('template/footer');
+	}
+
+	function laporan(){
+		$data['title'] = 'Laporan |'.$this->session->userdata('role');
+		$this->load->view('template/header', $data);
+		$this->load->view('admin/laporan/index');
+		$this->load->view('template/footer');
+	}
 }
 
 /* End of file Admin_toko.php */

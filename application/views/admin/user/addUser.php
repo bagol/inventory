@@ -26,6 +26,10 @@
             <input type="text" name="no_tlp" id="" class="form-control" required>
           </div>
           <div class="form-group">
+            <label for="kode barang masuk">Password</label>
+            <input type="password" name="password" id="" class="form-control" required>
+          </div>
+          <div class="form-group">
             <label for="kode barang masuk">Role</label>
             <select name="role" id="" class="form-control" required>
               <option value="admin">Admin</option>

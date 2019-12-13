@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Admin</title>
-</head>
-<body>
+<!-- page content -->
+<div class="right_col" role="main">
 	<?= $this->session->userdata('username'). ' selamat datang'; ?>
-	<a href="<?= base_url('Login/logOut') ?>">Logout</a>
-</body>
-</html>
+</div>
