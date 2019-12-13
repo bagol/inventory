@@ -4,8 +4,22 @@
 
     <div class="">
       <div class="page-title">
+        <?php if ($this->session->flashdata('msg_berhasil')): ?>  
+            <div class="alert alert-success alert-dismissible " role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+              </button>
+              <strong>Success</strong> <?= $this->session->flashdata('msg_berhasil'); ?>
+            </div>
+        <?php endif ?>
+        <?php if ($this->session->flashdata('msg_gagal')): ?>      
+          <div class="alert alert-danger alert-dismissible " role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
+            </button>
+            <strong>Failed</strong> <?= $this->session->flashdata('msg_gagal'); ?>
+          </div>
+        <?php endif ?>
         <div class="title_left">
-          <h3>Data Transaksi Barang Masuk</small></h3>
+          <h3>Data Transaksi Barang Keluar</small></h3>
         </div>
 
         <div class="title_right">
@@ -16,7 +30,7 @@
       <div class="clearfix"></div>
       <div class="page-title">
         <div class="title_left">
-         <a class="btn btn-primary mb-3" href="<?= base_url('admin/addBarangKeluar') ?>"><i class="fa fa-plus"></i> Tamah Transaksi Barang Masuk</a>
+         <a class="btn btn-primary mb-3" href="<?= base_url('admin/addBarangKeluar') ?>"><i class="fa fa-plus"></i> Tamah Transaksi Barang Keluar</a>
         </div>
 
         <div class="title_right">
@@ -32,7 +46,7 @@
         <div class="col-lg-12 col-sm-12  ">
           <div class="x_panel">
             <div class="x_title">
-              <h2>Data Barang Masuk</h2>
+              <h2>Data Barang Keluar</h2>
               
               <div class="clearfix"></div>
             </div>

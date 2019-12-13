@@ -8,29 +8,29 @@
       </div>
       <div class="x_content">
         <br>
-        <form action="<?= base_url('Suplier/addSuplier') ?>" method="post">
+        <form action="<?= base_url('Suplier/editSuplier') ?>" method="post">
           <div class="form-group">
             <label for="kode barang masuk">Kode Suplier</label>
-            <input type="text" name="kd_suplier" id="" value="<?= $kode_suplier ?>" class="form-control" readonly>
+            <input type="text" name="kd_suplier" id="" value="<?= $suplier->kd_suplier ?>" class="form-control" readonly>
           </div>
           <div class="form-group">
             <label for="kode barang masuk">Nama Suplier</label>
-            <input type="text" name="nama" id="" class="form-control" required>
+            <input type="text" name="nama" id="" class="form-control" value="<?= $suplier->nama ?>" required>
           </div>
           <div class="form-group">
             <label for="kode barang masuk">No Telephons</label>
-            <input type="text" name="no_tlp" id="" class="form-control" required>
+            <input type="text" name="no_tlp" id="" class="form-control" value="<?= $suplier->no_tlp ?>" required>
           </div>
           <div class="form-group">
             <label for="kode barang masuk">Email</label>
-            <input type="text" name="email" id="" class="form-control" required>
+            <input type="text" name="email" id="" class="form-control" value="<?= $suplier->email ?>" required>
           </div>
           <div class="form-group">
             <label for="kode barang masuk">Alamat</label>
-            <textarea name="alamat" id="" cols="30" rows="5" class="form-control" required></textarea>
+            <textarea name="alamat" id="" cols="30" rows="5" class="form-control" required><?= $suplier->alamat ?></textarea>
           </div>
           
-              <button class="btn btn-primary" type="reset">Reset</button>
+              <a class="btn btn-primary" href="<?= base_url('Admin/suplier') ?>" >Kembali</a>
               <button type="submit" class="btn btn-success">Simpan</button>
             </div>
           </div>

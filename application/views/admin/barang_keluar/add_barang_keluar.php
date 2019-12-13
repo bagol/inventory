@@ -8,14 +8,14 @@
       </div>
       <div class="x_content">
         <br>
-        <form action="" method="post">
+        <form action="<?= base_url('Barang/addBarangKeluar') ?>" method="post">
           <div class="form-group">
-            <label for="kode barang masuk">Kode Barang Masuk</label>
-            <input type="text" name="kode_barang_masuk" id="" class="form-control">
+            <label for="kode barang masuk">Kode Barang Keluar</label>
+            <input type="text" name="kode_barang_keluar" id="" class="form-control" value="<?= $kode ?>" readonly>
           </div>
           <div class="form-group">
             <label for="kode barang">Kode Barang</label>
-            <select name="" id="barang" class="form-control">
+            <select name="kd_barang" id="barang" class="form-control" required>
               <option value="kosong">--- Pilih Barang ---</option>
               <?php foreach ($barang as $b): ?>
                   <option value="<?= $b['kd_barang'] ?>"><?= $b['nama'] ?> - stock <small> <?= $b['stok'] ?></small></option>
@@ -24,7 +24,7 @@
           </div>
           <div class="form-group">
             <label for="kode barang">Kode Toko</label>
-            <select name="" id="" class="form-control">
+            <select name="kd_toko" id="" class="form-control" required>
               <option value="kosong">--- Pilih Toko ---</option>
               <?php foreach ($tokos as $toko): ?>
                   <option value="<?= $toko['kd_toko'] ?>"><?= $toko['nama'] ?></option>
@@ -33,7 +33,7 @@
           </div>
           <div class="form-group">
             <label for="kode barang masuk">Jumlah</label>
-            <input type="text" name="jumlah" id="" class="form-control">
+            <input type="number" name="jumlah" id="" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
           </div>
               <button class="btn btn-primary" type="reset">Reset</button>
               <button type="submit" class="btn btn-success">Simpan</button>

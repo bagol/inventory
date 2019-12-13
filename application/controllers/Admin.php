@@ -44,6 +44,9 @@ class Admin extends CI_Controller
 	}
 
 	function addBarangMasuk(){
+		$kode = $this->M_barangMasuk->getTransaksiMasukId()->row();
+		$kode = substr($kode->kode_barang_masuk, 3) + 1;
+		$data['kode_transaksi'] = 'BM-'.$kode;
 		$data['supliers'] = $this->M_suplier->getSuplier()->result_array();
 		$data['title'] = 'Tambah Barang Masuk | '.$this->session->userdata('role');
 		$data['barang'] = $this->M_barang->getBarang()->result_array();
@@ -61,9 +64,20 @@ class Admin extends CI_Controller
 	}
 
 	function addSuplier(){
+		$kode = $this->M_suplier->getSuplierId()->row();
+		$kode = substr($kode->kd_suplier,2) + 1;
+		$data['kode_suplier'] = 'S-'.$kode;
 		$data['title'] = 'Data Suplier | '.$this->session->userdata('role');
 		$this->load->view('template/header',$data);
 		$this->load->view('admin/suplier/addSuplier',$data);
+		$this->load->view('template/footer');
+	}
+
+	function editSuplier(){
+		$data['suplier'] = $this->M_suplier->getSuplier(['kd_suplier' => $this->uri->segment(3)])->row();
+		$data['title'] = 'Ubah Data Suplier | '.$this->session->userdata('role');
+		$this->load->view('template/header',$data);
+		$this->load->view('admin/suplier/editSuplier',$data);
 		$this->load->view('template/footer');
 	}
 
@@ -76,6 +90,9 @@ class Admin extends CI_Controller
 	}
 
 	function addBarangKeluar(){
+		$kode = $this->M_barangKeluar->getTransaksikeluarId()->row();
+		$kode = substr($kode->kode_transaksi, 3) + 1;
+		$data['kode'] = 'BK-'.$kode;
 		$data['tokos'] = $this->M_toko->getToko()->result_array();
 		$data['title'] = 'Tambah Barang Keluar | '.$this->session->userdata('role');
 		$data['barang'] = $this->M_barang->getBarang()->result_array();
@@ -86,7 +103,7 @@ class Admin extends CI_Controller
 
 	function user(){
 		$data['title'] = 'Data User | '.$this->session->userdata('role');
-		$data['supliers'] = $this->M_user->getUserAll()->result_array();
+		$data['users'] = $this->M_user->getUserAll()->result_array();
 		$this->load->view('template/header',$data);
 		$this->load->view('admin/user/data_user');
 		$this->load->view('template/footer');
@@ -99,6 +116,14 @@ class Admin extends CI_Controller
 		$this->load->view('template/footer');
 	}
 
+	function editUser(){
+		$data['user'] = $this->M_user->getUser(['kd_user' => $this->uri->segment(3)])->row();
+		$data['title'] = 'Tambah Data User | '.$this->session->userdata('role');
+		$this->load->view('template/header',$data);
+		$this->load->view('admin/user/editUser',$data);
+		$this->load->view('template/footer');
+	}
+
 	function toko(){
 		$data['title'] = 'Data Toko | '.$this->session->userdata('role');
 		$data['tokos'] = $this->M_toko->getToko()->result_array();
@@ -107,9 +132,20 @@ class Admin extends CI_Controller
 		$this->load->view('template/footer');
 	}
 	function addToko(){
+		$kd_toko = $this->M_toko->getTokoId()->row();
+		$kd_toko = substr($kd_toko->kd_toko, 2) + 1;
+		$data['kd_toko'] = 'T-'.$kd_toko;
 		$data['title'] = 'Tambah Data Toko | '.$this->session->userdata('role');
 		$this->load->view('template/header',$data);
 		$this->load->view('admin/toko/addToko');
+		$this->load->view('template/footer');
+	}
+
+	function editToko(){
+		$data['toko'] = $this->M_toko->getToko(['kd_toko' => $this->uri->segment(3)])->row();
+		$data['title'] = 'Tambah Data Toko | '.$this->session->userdata('role');
+		$this->load->view('template/header',$data);
+		$this->load->view('admin/toko/editToko',$data);
 		$this->load->view('template/footer');
 	}
 
@@ -122,9 +158,21 @@ class Admin extends CI_Controller
 	}
 
 	function addBarang(){
+		$kode = $this->M_barang->getBarangId()->row();
+		$kode = substr($kode->kd_barang,2);
+		$hasil = $kode + 1;
+		$data['kode_barang'] = 'B-'.$hasil;
 		$data['title'] = 'Tambah Data Barang | '.$this->session->userdata('role');
 		$this->load->view('template/header',$data);
-		$this->load->view('admin/barang/addBarang');
+		$this->load->view('admin/barang/addBarang',$data);
+		$this->load->view('template/footer');
+	}
+
+	function editBarang(){
+		$data['title'] = 'Ubah Data Barang | '.$this->session->userdata('role');
+		$data['barang'] = $this->M_barang->getBarangWhere(['kd_barang' => $this->uri->segment(3)])->row();
+		$this->load->view('template/header',$data);
+		$this->load->view('admin/barang/updateBarang',$data);
 		$this->load->view('template/footer');
 	}
 }

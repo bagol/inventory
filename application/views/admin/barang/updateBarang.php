@@ -15,32 +15,32 @@
       </div>
       <div class="x_content">
         <br>
-        <form action="<?= base_url('Barang/addBarang') ?>" method="post" enctype="multipart/form-data">
+        <form action="<?= base_url('Barang/editBarang') ?>" method="post" enctype="multipart/form-data">
           <div class="form-group">
             <label for="kode barang masuk">Kode Barang </label>
-            <input type="text" name="kode_barang" value="<?= $kode_barang ?>" class="form-control" readonly>
+            <input type="text" name="kode_barang" value="<?= $barang->kd_barang ?>" class="form-control" readonly>
           </div>
           <div class="form-group">
             <label for="kode barang masuk">Nama Barang </label>
-            <input type="text" name="nama" id="" class="form-control" required>
+            <input type="text" name="nama" value="<?= $barang->nama ?>" id="" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="kode barang masuk">Stok Barang </label>
-            <input type="number" name="stok" id="" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
+            <input type="number" name="stok" id="" class="form-control" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" value="<?= $barang->stok ?>" readonly>
           </div>
           <div class="form-group">
             <label for="kode barang masuk">Deskripsi </label>
-            <textarea name="deskripsi" id="" cols="30" rows="5" class="form-control"></textarea>
+            <textarea name="deskripsi" id="" cols="30" rows="5" class="form-control"><?= $barang->deskripsi ?></textarea>
           </div>
           <div class="form-group">
             <label for="">Gambar Barang</label>
             <div class="custom-file">
               <input type="file" class="custom-file-input" name="gambar" id="customFile">
-              <label class="custom-file-label" for="customFile">Choose file</label>
+              <label class="custom-file-label" for="customFile"><?= $barang->gambar ?></label>
             </div>
           </div>
           
-              <button class="btn btn-primary" type="reset">Reset</button>
+              <a class="btn btn-primary" href="<?= base_url('Admin/barang') ?>">Kembali</a>
               <button type="submit" class="btn btn-success">Simpan</button>
             </div>
           </div>
