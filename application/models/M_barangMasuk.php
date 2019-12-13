@@ -29,4 +29,9 @@ class M_barangMasuk extends CI_Model
 	function insertTransaksiMasuk($data){
 		return $this->db->insert('barang_masuk', $data);
 	}
+
+	function transaksiBulan($bulan){
+		$this->db->where('month(tanggal)', $bulan);
+		return $this->db->get('transaksi_masuk');
+	}
 }

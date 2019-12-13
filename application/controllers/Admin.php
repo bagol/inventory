@@ -175,4 +175,11 @@ class Admin extends CI_Controller
 		$this->load->view('admin/barang/updateBarang',$data);
 		$this->load->view('template/footer');
 	}
+
+	function laporan(){
+		$data['title'] = 'Data Barang | '.$this->session->userdata('role');
+		$this->load->view('template/header',$data);
+		$this->load->view('admin/laporan/index');
+		$this->load->view('template/footer');
+	}
 }

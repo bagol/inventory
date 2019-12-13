@@ -96,7 +96,8 @@
                       <li><a href="<?= base_url('admin/addToko') ?>">Tambah Toko</a></li>
                     </ul>
                   </li>
-
+                   <li class=""><a href="<?= base_url('Admin/laporan') ?>"><i class="fa fa-file-text-o"></i> Laporan </a>
+                  </li>
                 </ul>
               </div>
 
